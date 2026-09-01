@@ -59,7 +59,7 @@ useEffect(()=>{
           (el,idx) => <h2 key={idx}>{el}</h2>
         )} */}
 
-        <input type="text" value={text} onChange={(e)=>setText(e.target.value)} ref={input}/>
+        <input type="text" value={text} onChange={(e)=>{setText(e.target.value);console.log(e.target.key); if(e.target.key === "Enter") {setText(show=>!show) ;console.log("Enter")}}} ref={input}/>
         <button onClick={
           ()=> setTrue(show=>!show)
         }>Print</button>
